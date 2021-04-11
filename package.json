@@ -32,7 +32,7 @@
     "lint-and-fix": "eslint . --ext .ts --fix",
     "build": "npm run lint-and-fix && tsc",
     "test": "mocha --require ts-node/register test/**/*.ts",
-    "package": "npm run build && copy .\\package.json .\\dist\\src",
+    "package": "npm run build && copy .\\package.json .\\dist\\src\\functions",
     "sam-build": "npm run package && sam build",
     "delete-stack": "aws cloudformation delete-stack --stack-name lambda-base --region eu-west-2"
   },
