@@ -50,7 +50,7 @@ Resources:
     Type: AWS::Serverless::StateMachine
     Properties:
       Name: !Sub ${AppPrefix}-ProcessApplication
-      DefinitionUri: src/state-machines/ProcessApplication.asl.yaml
+      DefinitionUri: src/state-machines/ProcessApplication.asl.json
       DefinitionSubstitutions:
         PerformIdentityCheckFunctionArn: !GetAtt PerformIdentityCheck.Arn
         AggregateIdentityResultsFunctionArn: !GetAtt AggregateIdentityResults.Arn
@@ -62,5 +62,5 @@ Resources:
 
 Outputs:
   ProcessApplicationStateMachineArn:
-    Description: "Process Application state machine ARN"
+    Description: 'Process Application state machine ARN'
     Value: !GetAtt ProcessApplicationStateMachine.Arn
